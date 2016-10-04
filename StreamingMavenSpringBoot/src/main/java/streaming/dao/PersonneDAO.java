@@ -23,7 +23,7 @@ public class PersonneDAO {
     private EntityManager em;
     
     public List<Personne> lister(){
-        return em.createQuery("SELECT p FROM Personne p").getResultList();
+        return em.createQuery("SELECT p FROM Personne p ORDER BY p.nom, p.prenom").getResultList();
     }
     
     @Transactional
