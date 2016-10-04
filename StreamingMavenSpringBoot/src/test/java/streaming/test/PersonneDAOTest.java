@@ -28,7 +28,10 @@ public class PersonneDAOTest {
     
     @Test
     public void ajouter(){
-        dao.ajouter(new Personne());
+        Personne p = new Personne();
+        p.setNom("LALA");
+        p.setPrenom("Michel");
+        dao.ajouter(p);
     }
     
     @Test
