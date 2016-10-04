@@ -33,6 +33,6 @@ public class PersonneDAOTest {
     
     @Test
     public void lister(){
-        Assert.assertNotNull(dao.lister());
+        Assert.assertTrue(dao.lister().size() > 0);
     }
 }
