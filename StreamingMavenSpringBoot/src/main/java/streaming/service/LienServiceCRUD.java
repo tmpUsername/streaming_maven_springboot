@@ -5,6 +5,7 @@
  */
 package streaming.service;
 
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import streaming.entity.Lien;
 
@@ -13,5 +14,6 @@ import streaming.entity.Lien;
  * @author admin
  */
 public interface LienServiceCRUD extends CrudRepository<Lien, Long>{
-    
+    public List<Lien> findAllByFilmId(Long filmId);
+    public List<Lien> findOnelByEpisodeNumEpisodeAndEpisodeSaisonNumSaisonAndEpisodeSaisonSerieTitre(Integer numEpisode, Integer numSaion, String titre);
 }

@@ -5,17 +5,18 @@
  */
 package streaming.test;
 
-import javax.persistence.PersistenceContext;
+import java.io.FileNotFoundException;
+import java.sql.SQLException;
+import org.dbunit.DatabaseUnitException;
+import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
-import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import streaming.entity.Film;
+import streaming.service.SaisonServiceCRUD;
 import streaming.spring.SpringConfig;
-import streaming.service.FilmServiceCRUD;
 
 /**
  *
@@ -23,20 +24,18 @@ import streaming.service.FilmServiceCRUD;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = SpringConfig.class)
-public class FilmServiceTest {
-
+public class SaisonServiceCRUDTest {
     @Autowired
-    private FilmServiceCRUD dao;
+    private SaisonServiceCRUD service;
 
-    @Before
-    public void toutSupprimer() {
-        dao.deleteAll();
+    @BeforeClass
+    public static void avant() throws ClassNotFoundException, SQLException, DatabaseUnitException, FileNotFoundException {
+        new ImportDB().test();
     }
     
+    //14. Toutes les saisons d'une série donnée classées par ordre
     @Test
-    public void ajouter2Film(){
-        dao.save(new Film());
-        dao.save(new Film());
+    public void toutesLesSaisonsDeDexter(){
+        Assert.assertEquals(8, service.findAllBySerieTitreOrderByNumSaisonAsc("Dexter").size());
     }
-
 }

@@ -5,6 +5,7 @@
  */
 package streaming.service;
 
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import streaming.entity.Episode;
 
@@ -13,5 +14,5 @@ import streaming.entity.Episode;
  * @author admin
  */
 public interface EpisodeServiceCRUD extends CrudRepository<Episode, Long>{
-    
+    public List<Episode> findAllBySaisonNumSaisonAndSaisonSerieTitreOrderByNumEpisodeAsc(Integer numSaison, String titreSerie);
 }
