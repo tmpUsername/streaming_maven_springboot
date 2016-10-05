@@ -43,12 +43,7 @@ public class LienServiceCRUDTest {
     
     //16. Tous les liens d'un numéro d'épisode d'un numéro de saison d'une série donnée
     @Test
-    public void liensEpSerieSaisonTitreOK(){
-        Assert.assertNotNull(service.findOnelByEpisodeNumEpisodeAndEpisodeSaisonNumSaisonAndEpisodeSaisonSerieTitre(1, 1, "Borgia"));
-    }
-    
-    @Test
     public void liensEpSerieSaisonTitreKO(){
-        Assert.assertNotNull(service.findOnelByEpisodeNumEpisodeAndEpisodeSaisonNumSaisonAndEpisodeSaisonSerieTitre(125, 1, "Borgia"));
+        Assert.assertTrue(service.findAllByEpisodeNumEpisodeAndEpisodeSaisonNumSaisonAndEpisodeSaisonSerieTitre(1, 1, "Borgia").isEmpty());
     }
 }
