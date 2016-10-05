@@ -5,16 +5,13 @@
  */
 package streaming.service;
 
-import java.util.List;
 import org.springframework.data.repository.CrudRepository;
-import streaming.entity.Film;
+import streaming.entity.Lien;
 
 /**
  *
  * @author admin
  */
-public interface FilmService extends CrudRepository<Film, Long>{
-    
-    public List<Film> findAllByTitre(String t);
+public interface LienServiceCRUD extends CrudRepository<Lien, Long>{
     
 }

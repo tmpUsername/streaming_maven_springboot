@@ -14,7 +14,7 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import streaming.entity.Personne;
 import streaming.spring.SpringConfig;
-import streaming.service.PersonneService;
+import streaming.service.PersonneServiceCRUD;
 
 /**
  *
@@ -24,7 +24,7 @@ import streaming.service.PersonneService;
 @SpringApplicationConfiguration(classes=SpringConfig.class)
 public class PersonneDAOTest {
     @Autowired
-    private PersonneService dao;
+    private PersonneServiceCRUD dao;
     
     @Test
     public void ajouter(){

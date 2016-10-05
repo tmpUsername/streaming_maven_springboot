@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 import streaming.entity.Film;
 import streaming.entity.Pays;
-import streaming.service.PaysService;
+import streaming.service.PaysServiceCRUD;
 
 /**
  *
@@ -28,7 +28,7 @@ import streaming.service.PaysService;
 public class PaysDAOTest {
     
     @Autowired
-    private PaysService dao;
+    private PaysServiceCRUD dao;
     
     @Test
     public void ajouter(){

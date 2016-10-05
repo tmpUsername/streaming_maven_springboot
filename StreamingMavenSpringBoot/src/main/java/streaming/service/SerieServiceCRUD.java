@@ -6,12 +6,12 @@
 package streaming.service;
 
 import org.springframework.data.repository.CrudRepository;
-import streaming.entity.Lien;
+import streaming.entity.Serie;
 
 /**
  *
  * @author admin
  */
-public interface LienService extends CrudRepository<Lien, Long>{
+public interface SerieServiceCRUD extends CrudRepository<Serie, Long>{
     
 }

@@ -12,6 +12,6 @@ import streaming.entity.Personne;
  *
  * @author admin
  */
-public interface PersonneService extends CrudRepository<Personne, Long>{
+public interface PersonneServiceCRUD extends CrudRepository<Personne, Long>{
     
 }
