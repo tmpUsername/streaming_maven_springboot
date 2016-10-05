@@ -5,35 +5,13 @@
  */
 package streaming.dao;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.data.repository.CrudRepository;
 import streaming.entity.Pays;
-import streaming.spring.SpringConfig;
 
 /**
  *
  * @author admin
  */
-@Repository
-public class PaysDAO {
-
-    @PersistenceContext
-    private EntityManager em;
-
-    public Pays rechercher(long id) {
-        return em.find(Pays.class, id);
-    }
-
-    @Transactional
-    public void ajouter(Pays p) {
-        em.persist(p);
-    }
-    
-    @Transactional
-    public void modifier (Pays p){
-        em.merge(p);
-    }
+public interface PaysDAO extends CrudRepository<Pays, Long>{
     
 }

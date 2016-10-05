@@ -31,11 +31,7 @@ public class PersonneDAOTest {
         Personne p = new Personne();
         p.setNom("LALA");
         p.setPrenom("Michel");
-        dao.ajouter(p);
+        dao.save(p);
     }
     
-    @Test
-    public void lister(){
-        Assert.assertTrue(dao.lister().size() > 17);
-    }
 }

@@ -6,12 +6,12 @@
 package streaming.dao;
 
 import org.springframework.data.repository.CrudRepository;
-import streaming.entity.Personne;
+import streaming.entity.Lien;
 
 /**
  *
  * @author admin
  */
-public interface PersonneDAO extends CrudRepository<Personne, Long>{
+public interface LienDAO extends CrudRepository<Lien, Long>{
     
 }
