@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package streaming.dao;
+package streaming.service;
 
 import org.springframework.data.repository.CrudRepository;
-import streaming.entity.Pays;
+import streaming.entity.Personne;
 
 /**
  *
  * @author admin
  */
-public interface PaysDAO extends CrudRepository<Pays, Long>{
+public interface PersonneService extends CrudRepository<Personne, Long>{
     
 }

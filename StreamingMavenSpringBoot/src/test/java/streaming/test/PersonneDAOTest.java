@@ -12,9 +12,9 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import streaming.dao.PersonneDAO;
 import streaming.entity.Personne;
 import streaming.spring.SpringConfig;
+import streaming.service.PersonneService;
 
 /**
  *
@@ -24,7 +24,7 @@ import streaming.spring.SpringConfig;
 @SpringApplicationConfiguration(classes=SpringConfig.class)
 public class PersonneDAOTest {
     @Autowired
-    private PersonneDAO dao;
+    private PersonneService dao;
     
     @Test
     public void ajouter(){
